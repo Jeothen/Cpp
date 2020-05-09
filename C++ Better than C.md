@@ -1508,7 +1508,12 @@ int main() {
 }
 ```
 
-
+* nullptr과 데이터 타입
+  * nullptr은 "std::nullptr_t" 타입
+* nullptr_t 타입과 형변환
+  * std::nullptr_t 타입은 "모든 타입의 포인터로 암시적 변환된다"
+  * std::nullptr_t 타입은 "int 타입으로 변환될 수 있다"
+  * std::nullptr_t 타입은 "bool 타입으로 직접 초기화(direct initialization)시 초기값으로 사용 가능"하다
 
 ```c++
 
@@ -1533,9 +1538,31 @@ int main() {
 }
 ```
 
+* NULL과 nullptr
 
+```c++
+#include <iostream>
 
-```
+void foo(int n) { std::cout << "int" << std::endl;}
+void foo(void* p) { std::cout << "void*" << std::endl; }
+
+void goo(char* n) { std::cout << "goo" << std::endl; }
+
+#ifdef __cplusplus
+#define NULL 0
+#else
+#define NULL (void*)0
+#endif
+
+int main(){
+    foo(0); // int 
+    foo((void*)0); // c++11부터 nullptr 사용 / 이전에는 casting
+    foo(NULL); // void* -> (marco) int
+    
+    goo(NULL); // c에서는 void*가 다른 type으로 암시적 형변환 가능하지만, 
+               // c++에서는 다른 type으로 형변환 불가능해 ERROR 
+    
+}
 
 ```
 
