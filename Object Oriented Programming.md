@@ -26,4 +26,26 @@ int main() {
 
 
 
-03:00
+```c++
+Struct Complex{
+    double real;
+    double image;
+};
+
+Complex add(const Complex& c1, Complex c2) {  // const &함수가 성능 향상에 좋다
+    Complex temp;
+    temp.real = c1.real + c2.real;
+    temp.image = c1.image + c2.image;
+    return temp;
+}
+
+int main() {
+    Complex c1 = {1,1};
+    Complex c2 = {2,2};
+    Complex ret = add(c1,c2);
+}
+```
+
+
+
+1:41

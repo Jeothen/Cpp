@@ -170,7 +170,7 @@ int main(){
 #include <stdio.h>
 std::printf("aa"); // error  printf() 등의 표준 함수가 "global namespace"에 있다
 */
-#include <cstdio.h>
+#include <cstdio>
 // printf() 등의 표준 함수가 "global namespace"와 "std" 이름 공간에 있다
 std::printf("AA"); // build success
 printf("AA"); // success
@@ -1605,7 +1605,6 @@ int 타입 대신에 모든 타입에 사용할 수 있도록 함수 템플릿�
 
 실습 문제 3.
 Swap 함수를 전역 공간에 놓지 말고 Util 이라는 namespace 안에 넣고, main 함수에서 Swap을 사용하는 코드도 만들어 보세요.
-
 
 실습 문제 4.
 C++ 표준에는 이미 swap 함수를 템플릿 버전으로 제공하고 있습니다. swap 함수를 사용하려면 <algorithm> 헤더를 사용해야 합니다. 또한 swap 함수는 std namespace 안에 있습니다. C++ 표준에 있는 swap을 사용해 보세요.
