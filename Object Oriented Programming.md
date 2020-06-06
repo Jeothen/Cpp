@@ -453,4 +453,173 @@ int main() {
 
 
 
-* 생성자
+* 생성자 
+
+```c++
+#include <iostream>
+using namespace std;
+
+class Point {
+	int x, y;
+public:
+//	Point() { x = 0; y = 0; cout << "1" << endl; }
+//	Point(int a, int b) { x = a, y = b; cout << "2" << endl; }
+};
+
+int main() {
+	Point p1;  // 생성자를 선언하지 않으면 compiler가 인자가 없는 default 생성자를 만든다
+//	Point p2(1, 2);
+}
+```
+
+
+
+```c++
+#include <iostream>
+using namespace std;
+
+class Point {
+	int x, y;
+public:
+	Point() { x = 0; y = 0; cout << "1" << endl; }
+	Point(int a, int b) { x = a, y = b; cout << "2" << endl; }
+};
+
+int main() {
+	Point p1(1, 2); // 2번째
+	Point p2{ 1,2 }; // 직접 초기화 문법 2번째 / c++ 11 이후
+	Point p3 = { 1,2 }; // 복사 초기화 2번째 / c++11 이후
+
+	Point p4; // 1번
+	Point p5();  // 함수의 선언 - p5 객체 생성이 아님
+	Point p6{};  // 1번 생성자 -  직접 초기화
+	Point p7 = {}; // 1번 - 복사 초기화
+
+	Point p8[3]; // 1번 생성자를 3번 호출
+	Point p9[3] = { Point(1,1) }; // 첫번째 - 2번 / 두세번째 - 1번 생성자 호출 
+	Point p10[3] = { {1,1}, {2,2} };  //  1,2번째 - 2번 / 세번째 - 1번  / c++11 부터 사용
+
+	Point* p11;  // 포인터 변수만 만들었기에 생성자 호출x
+
+
+	// 메모리만 할당 됨 - 생성자 할당x
+	p11 = static_cast<Point*>(malloc(sizeof(Point)));
+	free(p11);
+
+	// new는 생성자 호출 (일반 생성자)
+	p11 = new Point;
+	delete p11;
+
+	p11 = new Point(); // 1번 생성자
+	delete p11;
+
+	p11 = new Point(1, 2); // 2번 생성자
+	delete p11;
+
+
+}
+```
+
+* 생성자 / 소멸자 호출 순서
+
+```c++
+#include <iostream>
+class Point {
+	int x, y;
+public:
+	Point() { std::cout << "Point()" << std::endl; }
+	~Point() { std::cout << "~Point()" << std::endl; }
+};
+
+class Rect {
+	Point p1;
+	Point p2;
+public:
+	Rect() { std::cout << "Rect()" << std::endl; }
+	~Rect() { std::cout << "~Rect()" << std::endl; }
+};
+
+int main() {
+	Rect r;
+}
+```
+
+객체 생성 : 멤버 생성자 먼저 호출  -> 자신의 생성자 호출
+
+객체 파괴 : 자신의 소멸자 호출 -> 멤버 소멸자 호출
+
+
+
+* 위임생성자 
+  * 생성자에서 다른 생성자를 호출 (클래스 구현부에 표기)
+
+```c++
+class Point {
+	int x, y;
+public:
+	Point() : Point(0, 0)
+	{
+//		x = 0;
+//		y = 0;
+	}
+	Point(int a, int b) 
+	{
+		x = a;
+		y = b;
+	}
+};
+
+int main() {
+	Point p;
+}
+
+-------------------
+    // Point. h
+class Point
+{
+	int x, y;
+public:
+	Point();
+	Point(int a, int b);
+};
+
+// Point.cpp
+#include "Point.h"
+
+Point::Point() : Point(0, 0)
+{
+}
+
+Point::Point(int a, int b)
+{
+	x = a; y = b;
+}
+```
+
+* default 생성자
+
+```c++
+class Point
+{
+	int x; int y;
+public:
+	Point() = default;   // default 생성자도 제공해줌 - 구현부에 만들어 줄 필요 없다
+//  Point() = delete // 생성자도 삭제할 수 있다. - 복사 생성자에서 많이 사용    
+//	Point() {}
+	Point(int a, int b) {}  
+};
+
+int main() {
+	Point p1;
+	Point p2(1, 2);
+}
+```
+
+
+
+* 소멸자
+
+```
+
+```
+
