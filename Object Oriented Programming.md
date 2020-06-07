@@ -573,7 +573,7 @@ int main() {
 	Point p;
 }
 
--------------------
+---------------------------------------------------------------
     // Point. h
 class Point
 {
@@ -618,6 +618,355 @@ int main() {
 
 
 * 소멸자
+  * 사용자가 소멸자를 만들지 않으면 compiler가 제공함
+
+```c++
+// c style
+#include <stdio.h>
+
+int main() {
+	FILE* f = fopen("a.txt", "wt");
+
+//	f = 0;  자원의 핸들을 담는 "변수에 직접 접근" 할 수 있다
+	fputs("hello", f);
+
+//	fclose(f); 획득한 자원은 반드시 반납
+}
+
+--------------------------------------
+    
+```
+
+* 생성자에서 자원을 할당하고 소멸자에서 자원을 해지 (c++)
+
+```c++
+#include <iostream>
+#include <cstdio>
+#include <string>
+
+class File {
+	FILE* file = 0;  // 자원의 번호를 담은 멤버 변수는 private에 넣어 외부에서 접근 못하게 함
+public:
+	File(std::string filename, std::string mode) 
+	{
+		file = fopen(filename.c_str(), mode.c_str());
+	}
+	~File() 
+	{
+		fclose(file);
+	}
+	// RW 함수들
+	void puts(std::string s) 
+	{
+		fputs(s.c_str(), file);
+	}
+};
+
+int main() {
+	File f("a.txt", "wt");
+	f.puts("hello");
+}
+```
+
+
+
+### 초기화 리스트
+
+* class의 멤버 데이터에 const 나 reference가 있는 경우 생성자에서 초기화를 해야됨(대입x)
+
+```c++
+#include <iostream>
+
+class Point {
+	int x; 
+	int y;
+	const int cval;
+	int &r; 
+
+public :
+	Point(int a, int b, int c) : x(a), y(b), cval(c), r(a)  // 초기화
+	{
+//		cval = c; 대입이라 error
+//		x = a;  대입 
+//		y = b;
+	}
+};
+
+int main() {
+	Point p(1, 2,10);
+	int a = 0; // 초기화 , 생성자 호출
+	int b;   // 생성자 호출
+	b = 0;  // 대입.  대입연산자 호출
+}
+```
+
+
+
+* class 내에 default 생성자가 없는 type(Point)가 멤버로 있는 경우
+
+```c++
+#include <iostream>
+class Point {
+	int x, y;
+public:
+	Point(int a, int b) : x(a), y(b) {}
+};
+/*
+class Rect {
+	Point p1{ 1,1 };
+	Point p2{ 2, 2 };
+public:
+	Rect() {}
+};
+*/
+class Rect {
+	Point p1;
+	Point p2;
+public:
+	Rect(int a, int b, int c, int d) : p1(a, b), p2(c, d) 
+	{
+	}
+};
+int main() {
+	Rect r(1,2,3,4);
+}	
+```
+
+* 멤버 초기화 리스트 
+
+```c++
+#include <iostream>
+
+class Point {
+public:
+	int x;
+	int y;
+public:
+	Point() : y(0), x(y) {}
+};
+
+int main() {
+	Point p;
+	// 메모리에 x와 y가 잡히는데 x가 먼저 선언되었음 (초기화는 만들어질 때 초기화가 됨)
+	std::cout << p.x << std::endl; // x부터 초기화되고 y가 초기화 됨
+}
+```
+
+
+
+```c++
+// Point.h
+class Point{
+	int x = 0;
+	int y = 0;
+public:
+	Point(int a, int b);
+}
+
+// Point.cpp
+#include "Point.h"
+
+Point::Point(int a, int b) : x(a), y(b) {}  // 위임생성자도 : 뒤에 사용
+```
+
+* explicit 생성자
+
+```c++
+#include <iostream>
+
+class OFile {
+	FILE* file;
+public:
+	OFile(const char* filename) {
+//	explicit OFile(const char* filename);  직접 초기화만 허용하고 복사 초기화는 X
+		file = fopen(filename, "wt");
+	}
+	~OFile() { fclose(file); }
+};
+
+void foo(OFile f) {}
+
+int main() {
+	OFile f1("a.txt");  // 직접 초기화
+    OFile f2 = "a.txt";  // 복사 초기화
+	foo(f1);
+	foo("hello");  // OFile f = hello로 복사 초기화 발생
+
+}
+```
+
+* class 생성자 explicit
+
+```c++
+#include <iostream>
+#include <vector>
+#include <string>
+#include <memory>
+
+int main() { 
+	std::string s1("hello"); // OK
+	std::string s2 = "hello"; // OK
+
+	std::vector<int> v1(10); // OK
+	std::vector<int> v2 = 10; // Error (생성자가 explicit)
+	std::vector<int> v2 = { 10 }; // OK  ({}는 explicit으로 생성자를 만들지 않음)
+	
+	// c++ 표준 스마트 포인터
+	std::shared_ptr<int> p1(new int); // ok
+	std::shared_ptr<int> p2 = new int; // error (생성자가 explicit)
+}
+```
+
+### 복사생성자
+
+* 자신과 동일한 타입 한개를 인자로 가지는 생성자
+
+* 사용자가 복사 생성자를 만들지 않으면 compiler가 default 복사 생성자를 만든다. - 모든 멤버를 복사
+
+```c++
+#include <iostream>
+
+class Point {
+public:
+	int x;
+	int y;
+
+	Point() : x(0), y(0) {}
+	Point(int a, int b) : x(a), y(b) {}
+
+};
+
+int main() {
+	Point p1; // 1번 OK
+	Point p2(1, 2); // 2번  OK
+//	Point p3(1); // ERROR
+	Point p4(p2); // Point(Point) - ok.
+}
+
+/* 동일한 타입의 생성자가 없는 경우 compiler가 생성자를 만듦
+ - 
+
+Point(const Point& p)
+	: x(p.x), y (p.y) {}
+
+*/
+```
+
+* 복사 생성자가 호출되는 3가지
+
+  * 자신과 동일한 타입의 객체로 초기화 될 때
+
+  ```c++
+  #include <iostream>
+  
+  class Point {
+  public:
+  	int x;
+  	int y;
+  	Point(int a, int b) : x(a), y(b) {
+  		std::cout << "ctor" << std::endl;
+  	}
+  	Point(const Point& p) : x(p.x), y(p.y) {
+  		std::cout << "copy ctor" << std::endl;
+  	}
+  };
+  
+  int main() {
+  	Point p1(1, 2); // 생성자
+  	Point p2(p1);   // 복사 생성자
+  	Point p3{ p1 }; // 직접 초기화
+  	Point p4 = { p1 }; // 복사 초기화 - explicit 처리 시 Error
+  	Point p5 = p1 ;    // 복사 초기화
+  }
+  ```
+
+  * 함수 인자를 call by value로 받을 경우
+
+  ```c++
+  #include <iostream>
+  
+  class Point {
+  public:
+  	int x;
+  	int y;
+  
+  	Point(int a, int b) : x(a), y(b) {
+  		std::cout << "ctor" << std::endl;
+  	}
+  	Point(const Point& p) : x(p.x), y(p.y) {
+  		std::cout << "copy ctor" << std::endl;
+  	}
+  };
+  
+  // void foo(Point pt) { // Point pt = p1 - 복사 생성자 (call by value)
+  void foo(const Point& pt) {  // 메모리에 복사본을 만드는 게 아니라 참조하는 것이니 explicit 가능
+  }
+  
+  int main() {
+  	Point p1(1, 2); // 생성자
+  	foo(p1);
+  }
+  ```
+
+  * return 타입
+
+  ```c++
+  #include <iostream>
+  
+  class Point {
+  public:
+  	int x;
+  	int y;
+  
+  	Point(int a, int b) : x(a), y(b) {
+  		std::cout << "ctor" << std::endl;
+  	}
+  	Point(const Point& p) : x(p.x), y(p.y) {
+  		std::cout << "copy ctor" << std::endl;
+  	}
+  };
+  
+  Point p; // 생성자
+  //Point& foo() {  인 경우 복사 생성자를 부르지 않고 참조만 한다. 
+  // 단, 지역 변수인 경우 참조로 반환하면 안된다 (전역 변수인 경우만 사용)
+  
+  Point foo() { // 값 타입 반환인 경우 return용 임시 객체를 만든다 (만들 때 복사 생성자 호출)
+  	return p;
+  }
+  
+  int main() {
+  	foo();
+  }
+  
+  ```
+
+* default 복사 생성자의 문제점
+
+```c++
+#include <iostream>
+#include <cstring>
+#pragma warning(disable:4996)
+
+class Person {
+	char* name;
+	int age;
+public:
+	Person(const char* n, int a) : age(a) {
+		name = new char[strlen(n) + 1];
+		strcpy(name, n);
+	}
+	~Person() { delete[] name; }
+};
+
+int main() {
+	Person p1("kim", 20);
+	// Shallow copy - 얕은 복사 ( 메모리 자체를 복사하지 않고 주소만 복사하는 현상)
+	Person p2 = p1; // 실행시 error - 복사 생성자가 없으니 default 복사 생성자 호출 
+	//  p2가 파괴될 때, "kim" 메모리 파괴 - p1에서 name을 delete할 때 이미 delete 된 메모리
+}
+```
+
+* 객체의 복사 방법
 
 ```
 
