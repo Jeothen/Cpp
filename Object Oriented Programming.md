@@ -942,6 +942,8 @@ Point(const Point& p)
 
 * default 복사 생성자의 문제점
 
+  * 얕은 복사 : 클래스 안에 포인터 멤버가 있을 때, 디폴트 복사 생성자가 "메모리 자체를 복사하지 않고 주소만 복사하는 현상"
+
 ```c++
 #include <iostream>
 #include <cstring>
@@ -967,8 +969,101 @@ int main() {
 ```
 
 * 객체의 복사 방법
+  * 깊은 복사 : 클래스 안에 포인테 멤버가 있을 때, "메모리 주소를 복사하지 말고 메모리 자체의 복사본을 만드는 기술"
+
+```c++
+Person(const Person& p) : age(p.age) { 
+    //		age = p.age;
+    //		name = p.name; // 포인터를 제외한 모든 멤버를 복사
+    name = new char[strlen(p.name) + 1];
+    strcpy(name, p.name);
+}
 
 ```
 
+
+
+* 참조 계수
+  * 여러 객체가 하나의 자원을 공유
+  * 단, 몇 개의 객체가 자원을 사용하는지 "개수를 관리"
+
+```c++
+class Person {
+	char* name;
+	int age;
+	int* ref; // 참조 계수를 가리키는 포인터 변수
+public:
+	Person(const char* n, int a) : age(a) {
+		name = new char[strlen(n) + 1];
+		strcpy(name, n);
+	
+//		ref = new int;
+//		*ref = 1;  or
+		ref = new int(1); // 초기값
+	}
+	~Person() { 
+		// 참조 계수 기반일 때 소멸자
+		if (--(*ref) == 0) {
+			delete[] name; 
+			delete ref;
+		}
+	}
+
+	Person(const Person& p) : name (p.name), age(p.age), ref(p.ref) { 
+		++(*ref); // ref 증가
+	}
+};
 ```
+
+* 복사 금지
+
+```c++
+#include <iostream>
+#include <cstring>
+#pragma warning(disable:4996)
+
+class Person {
+	char* name;
+	int age;
+public:
+	Person(const char* n, int a) : age(a) {
+		name = new char[strlen(n) + 1];
+		strcpy(name, n);
+	}
+	~Person() { delete[] name; }
+    
+    Person(const Person&) = delete; // 복사 생성자를 못만들게 함
+};
+
+int main() {
+	Person p1("kim", 20);
+	Person p2 = p1; // 컴파일 에러 발생
+}
+```
+
+* String STL
+
+```c++
+#include <iostream>
+#include <cstring>
+#include <string>
+#pragma warning(disable:4996)
+
+// string이 내부적으로 자원 관리 - 동적할당을 할 필요 없다
+class Person {
+	std::string name;
+	int age;
+public:
+	Person(std::string n, int a) : name(n), age(a) {
+		
+	}
+};
+
+int main() {
+	Person p1("kim", 20);
+	Person p2 = p1;
+}
+```
+
+### Static Member
 
