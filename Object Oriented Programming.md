@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 ```c++
 
 // 복소수 2개를 더하고 싶다.
@@ -1066,4 +1062,164 @@ int main() {
 ```
 
 ### Static Member
+
+* static데이터는 메모리에 한번만 사용된다 (모든 객체가 공유 / 접근 지정자를 사용할 수 있다)
+* 클래스 "내부에 선언" 하고 "외부에 정의"한다.
+
+```c++
+#include <iostream>
+
+// int cnt = 0; // 전역에 설정하면 수정될 수 있다.
+class Car {
+	int speed;
+	int color;
+	static int cnt; 
+public:
+//	int cnt = 0;  멤버 데이터는 객체가 cnt라는 변수를 각자 가지고 있다.
+	Car() { ++cnt; }
+	~Car() { --cnt; }
+	int Getcount() { return cnt; }
+};
+int Car::cnt = 0; // 정의도 같이 해줘야한다.
+
+
+int main() {
+	Car c1;
+	Car c2;
+	Car c3;
+//	cnt = 0;
+	std::cout << c1.Getcount() << std::endl;
+}
+```
+
+
+
+```c++
+class Car {
+public:
+    int speed;
+    int color;
+	static int cnt; 
+	Car() {}
+};
+
+int Car::cnt = 0; // 정의도 같이 해줘야한다. - 객체를 만들지 않아도 메모리에 등록
+
+int main(){
+	Car::cnt = 10; // 접근할 때는 Class 명을 쓰고 접근
+    Car c1, c2, c3;
+//  c1.cnt = 0; // 객체 이름 사용해서도 접근할 수 있으나, 가독성을 고려해 static에는 사용X
+//	sizeof(c1) = 8;  - Car::cnt는 외부의 메모리 사용
+}
+-------------------------------------
+// Car.h
+
+Class Car{
+public :
+    int speed;
+    int color;
+    static int cnt;   
+}
+
+// Car.cpp
+#include "Car.h"
+Car::cnt = 0;
+Car::Car(){
+    
+}
+```
+
+* 정적 멤버 데이터
+
+```c++
+
+class Test {
+public:
+	int data = 0; // C++11 부터 가능
+
+//	static int sdata1 = 0;  error  - static 멤버 데이터는 외부에서 definition 해야한다.
+	static int sdata1; // 선언(declaration)
+	static const int		sdata2 = 0;  // static const 데이터는 내부에서 정의할 수 있다.
+//	static const double		sdata3 = 0;  // error - 정수가 아닌 실수일 때는 외부에서 정의
+	static constexpr int		sdata4 = 0; // 정수 / 실수 둘 다 가능
+	static constexpr double		sdata5 = 0;
+
+	inline static int sdata6 = 0; // C++17부터 외부 정의 필요 없이 초기화 가능
+};
+
+int Test::sdata1 = 0; // 정의(definition)
+
+int main() {
+	int n1 = Test::sdata1;
+	int n2 = Test::sdata2;
+//	int n3 = Test::sdata3;
+	int n4 = Test::sdata4;
+	int n5 = Test::sdata5;
+}
+```
+
+
+
+|                         | 외부정의 | 내부정의 |
+| ----------------------- | -------- | -------- |
+| non static member data  | X        | O        |
+| static member data      | O        | X        |
+| static const 정수 계열  | X        | O        |
+| static const 비정수계열 | O        | X        |
+| static constexpr        | X        | O        |
+| inline static           | X        | O        |
+
+* Static Member Function
+
+```c++
+#include <iostream>
+
+class Car {
+	int speed;
+	int color;
+	static int cnt;
+public:
+	Car() { ++cnt; }
+	~Car() { --cnt; }
+	static int Getcount() { return cnt; } // 객체가 없을 때도 호출할 수 있다.
+};
+int Car::cnt = 0;
+
+int main() {
+	// 객체가 없어도 함수를 호출하고 싶을 때
+	Car::Getcount();
+	Car c1, c2, c3;
+	c1.Getcount();
+}
+```
+
+* 정적 멤버함수의 특징
+  * 객체 없이 호출 가능
+  * 일반 멤버 데이터에는 접근 X / static 멤버 데이터에는 접근 O
+
+```c++
+
+class Test {
+	int data1;
+	static int data2;
+public:
+	static void foo() { 
+		data1 = 0;  // error
+		data2 = 0; // 메모리에 존재
+		goo();  // error
+	}
+	void goo() {
+		data1 = 0;
+		data2 = 0;
+		foo();
+	}
+};
+
+int Test::data2 = 0;
+int main() {
+	Test::foo();
+	Test t;
+	t.goo();
+}
+```
 
