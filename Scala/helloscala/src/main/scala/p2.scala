@@ -15,6 +15,7 @@ object p2 {
     case _ => throw new NoSuchElementException // 나머지
   }
 
+
 /*
   def lastN[A](n: Int, lis:List[A]): A = {
     if (n <= 0 ) throw new IllegalArgumentException

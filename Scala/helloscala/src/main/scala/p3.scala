@@ -32,8 +32,26 @@ object p3 {
   }
 
 
+  def lastN[A](n:Int,  lis: List[A]): A = {
+    def length[A] (lis:List[A]): Int = {
+      def lengthN[A](n:Int, lis:List[A]):Int = lis match{
+        case Nil => n
+        case _::tail => lengthN(n+1,tail)
+      }
+      lengthN(0,lis)
+    }
+    def FKth[A](k:Int, lis:List[A]):A = (k,lis) match {
+      case (0, h::_) => h
+      case (k, _::tail) if k > 0 => FKth(k - 1, tail)
+      case _ => throw new NoSuchElementException
+    }
+    val k = length(lis) - n
+    FKth(k,lis)
+  }
+
   def main(args: Array[String]): Unit = {
     val nums : List[Int] = List(1,1,2,3,5,8)
     println(findkth(2,nums))
+    println(lastN(4,nums))
   }
 }
