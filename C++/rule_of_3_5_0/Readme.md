@@ -21,7 +21,8 @@
 
 ### Rule of Zero (C++11)
 
-
+* Basically, In the rule of five, all five member functions must be listed.
+* If the rule of zero is applied, the compiler defines the member function as default or deleltes it according to the settings.
 
 
 
@@ -29,5 +30,5 @@
 
 ### Self Allocation Protection
 
-
-
+* When using the copy assignment operator, in very rare cases an object that references itself can be created.
+* So, If object allocates itself, It should be written login to prevent objects from referencing themselves.
