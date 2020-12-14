@@ -59,6 +59,11 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iomanip": "cpp",
+        "thread": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "valarray": "cpp"
     }
 }
