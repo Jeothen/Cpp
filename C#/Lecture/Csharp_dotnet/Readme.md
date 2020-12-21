@@ -22,3 +22,30 @@
     * Readline() : reading one sentence
     * Convert class : using method (specific data type), transform data type.
     * ConsoleKeyInfo : reading from keyboard, not input buffer
+
+
+
+
+
+* Type, Variable, Literal
+  * If reading not initailized variable, Compile error occured.
+  * Literal notation
+    * ob111 - binary / 010 - octal / ox11 - hexadecimal   : same as C++
+    * Digit notation : using `_`
+  * var
+    * It is same as auto of C++.
+    * inference left value type from right value
+  * casting
+    * C# doesn't support implicit casting, but explicit casting
+
+
+
+* CTS of CLR Data Type 
+
+  * int : Int32 or System.Int32
+
+  * double : Double or System.Double
+
+  * string : String or System.String
+
+    ...

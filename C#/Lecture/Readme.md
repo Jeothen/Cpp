@@ -26,10 +26,8 @@
 * These are same term as IL (Intermediate Language)
   * MSIL (Microsoft Intermediate language -> Multi-Language Support Intermediate Language)
   * CIL (Common Intermediate Language)
-
 * CTS (Common Type System)
   * Since data types of various languages must be compatible in CLR(Common Languega Runtime), change them to common data types.
-
 * FCL (Framework Class Library)
   * Libraries are provided by the CLR rather than language support
   * Changes the library grammar used in various languages to be compatible
