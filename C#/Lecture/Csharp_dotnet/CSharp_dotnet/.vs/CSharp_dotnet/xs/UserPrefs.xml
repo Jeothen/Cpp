@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{DBD7847B-9C81-4949-B240-4302CBCC9804}|Default">
+  <MonoDevelop.Ide.ItemProperties.CSharp__dotnet PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="basic.cs">
+    <Files>
+      <File FileName="basic.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CSharp_dotnet" expanded="True">
+            <Node name="CSharp_dotnet" expanded="True">
+              <Node name="basic.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
