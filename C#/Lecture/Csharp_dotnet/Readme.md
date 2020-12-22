@@ -25,8 +25,6 @@
 
 
 
-
-
 * Type, Variable, Literal
   * If reading not initailized variable, Compile error occured.
   * Literal notation
@@ -49,3 +47,34 @@
   * string : String or System.String
 
     ...
+
+
+
+* Class
+  * The access specifier must be applied to all members
+  * Inheritance is used through `:` and access specifiers cannot be used for inheritance.
+  * Online C++, use `()` to Construct an object
+  * Use ` new`  in front of the data type when creating a field or method with the same name as a member in the base clas
+
+
+
+* Method
+
+  * In Java, all method is virtual method.   
+  * In C++ and C#, method can be virtual method or not.   So, If not virtual method redefine needed, using `new` for not happened compile warning.
+
+  * Use `override` , not `new `  when redefining a virtual method.  `new`  using when creating other method.
+
+
+
+
+
+
+
+* Interface
+  * Defining the names of methods used by multiple classes
+  * In C# development, design the interface first. After that, the class provides a method by implementing a specific interface.
+  * Interface implement
+    * Not using `override`
+    * method type is virtual or not
+

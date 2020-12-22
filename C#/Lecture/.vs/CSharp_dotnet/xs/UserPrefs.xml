@@ -1,24 +1,16 @@
 ﻿<Properties StartupConfiguration="{CCE546C9-1DC7-4C84-9FBE-FDC647A19AA7}|Default">
   <MonoDevelop.Ide.ItemProperties.CSharp__dotnet PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Concepts/Program.cs">
-    <Files>
-      <File FileName="CSharp_dotnet/Interface.cs" Line="57" Column="1" />
-      <File FileName="../Concepts/Program.cs" Line="12" Column="2" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CSharp_dotnet" expanded="True">
-            <Node name="Concepts" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
-            <Node name="CSharp_dotnet" expanded="True" />
+            <Node name="Concepts" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Concepts FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
