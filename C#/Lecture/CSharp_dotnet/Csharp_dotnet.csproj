@@ -5,14 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="basic.cs" />
-    <Compile Remove="basic_grammer.cs" />
-    <Compile Remove="Class_grammer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="basic.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <None Include="basic_grammer.cs" />
-    <None Include="Class_grammer.cs" />
-  </ItemGroup>
 </Project>
