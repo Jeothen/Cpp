@@ -1,13 +1,14 @@
-﻿<Properties StartupConfiguration="{AA10751F-D944-453A-92D8-06A244B2CFA8}|Default">
+﻿<Properties StartupConfiguration="{CCE546C9-1DC7-4C84-9FBE-FDC647A19AA7}|Default">
   <MonoDevelop.Ide.ItemProperties.CSharp__dotnet PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="CSharp_dotnet" expanded="True">
-            <Node name="CSharp_dotnet" expanded="True">
+          <Node name="Lecture" expanded="True">
+            <Node name="Concepts" expanded="True">
               <Node name="Readme.md" selected="True" />
             </Node>
+            <Node name="CSharp_dotnet" expanded="True" />
           </Node>
         </State>
       </Pad>
