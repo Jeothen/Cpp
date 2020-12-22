@@ -1,15 +1,12 @@
 ﻿<Properties StartupConfiguration="{8649172A-A96E-420C-9FC3-503F50AD6F49}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Csharp_dotnet/Program.cs">
-    <Files>
-      <File FileName="Csharp_dotnet/Program.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Lecture" expanded="True">
             <Node name="Concepts" expanded="True" />
             <Node name="Csharp_dotnet" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Basic.cs" selected="True" />
             </Node>
           </Node>
         </State>
