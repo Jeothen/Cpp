@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp_dotnet", "CSharp_dotnet\CSharp_dotnet.csproj", "{CCE546C9-1DC7-4C84-9FBE-FDC647A19AA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp_dotnet", "CSharp_dotnet\CSharp_dotnet.csproj", "{CCE546C9-1DC7-4C84-9FBE-FDC647A19AA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concepts", "Concepts\Concepts.csproj", "{8649172A-A96E-420C-9FC3-503F50AD6F49}"
 EndProject
