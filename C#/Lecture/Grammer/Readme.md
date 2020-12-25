@@ -23,3 +23,23 @@
 
 
 
+---
+
+### Value | Reference Type
+
+* In C++, when the user allocates each variable, the place to be stored in memory is designated, whereas in C#, the place to be stored in memory is determined through the type.
+* The class is stored on the heap(**reference type**) and the struct(**value type**) is stored on the stack.  But the variables referencing the class are stored on the stack.
+
+* Value type
+  * struct, enum
+  * Types related to numbers such as int, double
+* Reference type
+  * class, interface, deletgate
+  * object, string, array...
+
+* Since all C# objects are derived from System.Object, create a type object with the Gettype() method and check with the return value of isvaluetype.
+
+
+
+---
+
