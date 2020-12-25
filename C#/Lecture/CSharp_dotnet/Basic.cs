@@ -1,4 +1,4 @@
-﻿// declare namespace
+// declare namespace
 using System;
 // static method of System.Console can be omitted
 using static System.Console;
