@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fdJRmptpQS6lD0WQHvYxQFWIHhyIBRZgDYdcuTsPXzmq6/3/NxXeJjCXUOb5wFviPqWz+udpTrIlG1TTu+5nCg==",
+  "dgSpecHash": "dm0A57QH+D5/Jg6P6zu0bMnQQJ8sBPNM/ejTbBvvyZtdYEydYe9nfA2abwrgZJtf9iAErNS/PYZt/0Dsvq3RSQ==",
   "success": true,
-  "projectFilePath": "/Users/thjeong/Desktop/Language/C#/Lecture/Csharp_dotnet/Csharp_dotnet.csproj",
+  "projectFilePath": "/Users/thjeong/Desktop/Language/C#/Lecture/csharp_dotnet/csharp_dotnet.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{8649172A-A96E-420C-9FC3-503F50AD6F49}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Grammer/System_Object.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="csharp_dotnet/Program.cs">
     <Files>
-      <File FileName="Grammer/Program.cs" Line="3" Column="26" />
+      <File FileName="csharp_dotnet/Program.cs" Line="11" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Lecture" expanded="True">
-            <Node name="Csharp_dotnet" expanded="True" />
-            <Node name="Grammer" expanded="True">
-              <Node name="System_Object.cs" selected="True" />
+            <Node name="csharp_dotnet" expanded="True">
+              <Node name="Basic_grammer.cs" selected="True" />
             </Node>
+            <Node name="Grammer" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -18,7 +18,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Concepts PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Csharp_dotnet/Csharp_dotnet.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.csharp__dotnet FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

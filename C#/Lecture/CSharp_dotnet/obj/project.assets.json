@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thjeong/Desktop/Language/C#/Lecture/Csharp_dotnet/Csharp_dotnet.csproj",
-      "projectName": "Csharp_dotnet",
-      "projectPath": "/Users/thjeong/Desktop/Language/C#/Lecture/Csharp_dotnet/Csharp_dotnet.csproj",
+      "projectUniqueName": "/Users/thjeong/Desktop/Language/C#/Lecture/csharp_dotnet/csharp_dotnet.csproj",
+      "projectName": "csharp_dotnet",
+      "projectPath": "/Users/thjeong/Desktop/Language/C#/Lecture/csharp_dotnet/csharp_dotnet.csproj",
       "packagesPath": "/Users/thjeong/.nuget/packages/",
-      "outputPath": "/Users/thjeong/Desktop/Language/C#/Lecture/Csharp_dotnet/obj/",
+      "outputPath": "/Users/thjeong/Desktop/Language/C#/Lecture/csharp_dotnet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/thjeong/.config/NuGet/NuGet.Config"
