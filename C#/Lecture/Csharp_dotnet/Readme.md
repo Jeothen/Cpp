@@ -46,7 +46,7 @@
 * double : Double or System.Double
   * string : String or System.String
 * Everything in C# is an object
-    * Certain values are also objects. Example is `   10.CompareTo(20);`
+  * Certain values are also objects. Example is `   10.CompareTo(20);`
   * Certain datatype are also objects. Example is   `int.Equals();`
 
 
