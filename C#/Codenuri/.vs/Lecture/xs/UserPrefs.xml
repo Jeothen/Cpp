@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{8649172A-A96E-420C-9FC3-503F50AD6F49}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Grammer/Equality.cs">
+    <Files>
+      <File FileName="Grammer/Equality.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Lecture" expanded="True">
+            <Node name="Grammer" expanded="True">
+              <Node name="Equality.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Concepts PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Csharp_dotnet/Csharp_dotnet.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
