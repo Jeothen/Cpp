@@ -97,3 +97,42 @@
   * OLD -> NEW  : public static explicit operator NEW(OLD obj)
   * conversion operator not called when using `as`  operator
 
+
+
+### Boxing
+
+* Boxing : The processing of copying what is stored in the stack like valuetype to heap
+* Unboxing : Saving the values on the heap to a variable on the stack
+
+
+
+#### Compare
+
+* relational operator such as `< `  or `> ` , used for numeric associate type
+* CompareTo() method used almost type, enable to compare
+* IComparable interface
+  * Interface containing rules for CompareTo method
+  * Types with comparable sizes must implement `IComparable` interface
+  * C# provides almost method rules as an interface.
+  * IComparable 
+    * C# 1.0 interface
+    * use object as method argument
+    * occured boxing / unboxing
+  * IComaparable<T>
+    * C# 2.0 interface
+    * use Generic
+    * not occurred boxing / unboxing
+* It is recommended to implement both IComapable and IComparable<T> interfaces.
+
+
+
+#### Equals
+
+* **Equals** method
+  * provided by the object class
+  * Present in all types
+
+* **CompareTo** method
+  * Present only in types that implement IComparable or IComparable<T> interface
+* When providing Equals(), it is better not to implement only the object type, but also implement the IEquatable<T> interface.
+

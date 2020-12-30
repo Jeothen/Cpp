@@ -13,6 +13,9 @@
     <Compile Remove="System_Object.cs" />
     <Compile Remove="Value_Reference_Type.cs" />
     <Compile Remove="casting.cs" />
+    <Compile Remove="conversion_operator.cs" />
+    <Compile Remove="Boxing.cs" />
+    <Compile Remove="Boxing2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Elvis.cs" />
@@ -22,5 +25,8 @@
     <None Include="System_Object.cs" />
     <None Include="Value_Reference_Type.cs" />
     <None Include="casting.cs" />
+    <None Include="conversion_operator.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <None Include="Boxing.cs" />
+    <None Include="Boxing2.cs" />
   </ItemGroup>
 </Project>
