@@ -1,28 +1,45 @@
 ﻿using System;
 
-namespace Concepts
+class Car : System.Object
 {
-    class System_Object
+
+}
+
+class Point
+{
+    private int x = 0;
+    private int y = 0;
+
+    public Point(int xpos, int ypos)
     {
-        static void Main(string[] args)
-        {
-            // int : type // 10 : object of int type
-            10.ToString();
-            // int.Parse();
-            
-            int n1;
-//            Console.WriteLine(n1); Compile error, not initialized
-            n1 = 10;
-            Console.WriteLine(n1);
+        x = xpos; y = ypos;
+    }
 
-            double n2 = 10;
-            var n3 = n2; // double
-
-            string s1 = "AAA";  // c# type
-            String s2 = "BBB";  // .net datatype
-            System.String s3 = "CCC"; // using System
-
-           
-        }
+    // In general, it is often overridden
+    public override string ToString()
+    {
+        return string.Format($"x = {x}, y = {y}");
     }
 }
+
+
+class System_Object
+{
+    static void Main(string[] args)
+    {
+        Car c = new Car();
+        c.ToString(); // All type derived from 'System.Object
+
+        //      Car. // enable to use 2 static method 
+
+        // ToString
+       
+
+        Point p1 = new Point(1, 11);
+        Point p2 = new Point(2, 22);
+
+        Console.WriteLine(p1.ToString());
+        Console.WriteLine(p2.ToString());
+    }
+}
+

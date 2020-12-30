@@ -5,4 +5,20 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Elvis.cs" />
+    <Compile Remove="Equality.cs" />
+    <Compile Remove="Nullable.cs" />
+    <Compile Remove="System_Object_basic.cs" />
+    <Compile Remove="System_Object.cs" />
+    <Compile Remove="Value_Reference_Type.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Elvis.cs" />
+    <None Include="Equality.cs" />
+    <None Include="Nullable.cs" />
+    <None Include="System_Object_basic.cs" />
+    <None Include="System_Object.cs" />
+    <None Include="Value_Reference_Type.cs" />
+  </ItemGroup>
 </Project>
