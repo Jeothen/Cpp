@@ -56,3 +56,25 @@
   * checking reference equality
   * there's a many case using for check same value
 
+
+
+#### Nullable
+
+* reference type : using `null`  to indicate no object
+* value type : cannot express no value (null)
+* Nullable<T>
+  * add no value (null) to value type  - can be use null
+  * Nullable<T> = int + bool
+  * int? : shorhand notation
+
+
+
+#### Evis Operator
+
+* null conditional operator
+  * ?.  (method).  /   ?[    (array)
+    * if right side is null, not operate left side
+    * ex)  int? n = c1?.foo();    // foo can be null
+  * ??    (nullable type)
+    * if left side of `??`   is null, operate right side of `??`
+    * 
