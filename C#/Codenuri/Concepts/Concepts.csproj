@@ -12,6 +12,7 @@
     <Compile Remove="System_Object_basic.cs" />
     <Compile Remove="System_Object.cs" />
     <Compile Remove="Value_Reference_Type.cs" />
+    <Compile Remove="casting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Elvis.cs" />
@@ -20,5 +21,6 @@
     <None Include="System_Object_basic.cs" />
     <None Include="System_Object.cs" />
     <None Include="Value_Reference_Type.cs" />
+    <None Include="casting.cs" />
   </ItemGroup>
 </Project>

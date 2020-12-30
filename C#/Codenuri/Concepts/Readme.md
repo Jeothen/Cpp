@@ -3,8 +3,6 @@
 * All values are objects, not just instances
 * In CTS, c# data type is changed to .net framework data type.
 
-
-
 * All type derived from `System.Object`
 
 
@@ -88,4 +86,14 @@
 
 #### Casting
 
-* 
+* If there's a data loss in the casting, explicit casting needed.
+* `is`  operator 
+  * check reference variable is same as specific type
+* two casting ways
+  * NEW n = **(NEW)**obj;   -> if failed, exception occured
+  * NEW n = obj **as** NEW  -> if failed, return null
+
+* Conversion operator
+  * OLD -> NEW  : public static explicit operator NEW(OLD obj)
+  * conversion operator not called when using `as`  operator
+
