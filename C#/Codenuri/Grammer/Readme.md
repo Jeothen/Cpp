@@ -37,3 +37,38 @@
 * Passing the reference type as `value` can change the state of the object, but it cannot contain a new object.
 * Passing the reference type as `reference` can change the state of the object, but it can contain a new object.
   * It's acting like double pointer in C language
+
+
+
+#### Method
+
+* Variable Parameter
+  * Passing an `array` as an argument
+  * Using variable length parameters such as `params`
+* Params
+  * The method in which params is used as an argument creates an array on the heap, so there is a performance degradation.
+  * Matches the same parameters first, and uses params method when none
+
+* Named Parameter
+  * When passing arguments, use'argument name
+  * When naming argument names, the order is irrelevant
+
+* Optional parameter
+
+  * Save default value to parameter
+
+  * default must be specified from the end
+    * If only some arguments are given, it is not known which argument to use
+  * What is determined by execution time, not determined at compile time, cannot be used as an argument.
+
+* Expression
+  * If the method implementation is simple, indicate the return value after =>
+* Extension method
+  * Syntax for adding a new method without modifying the existing class
+  * Provided as a static method of a static class
+
+
+
+#### Property
+
+* 

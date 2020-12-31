@@ -7,8 +7,12 @@
 
   <ItemGroup>
     <Compile Remove="Array.cs" />
+    <Compile Remove="Callby.cs" />
+    <Compile Remove="Method.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Array.cs" />
+    <None Include="Callby.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <None Include="Method.cs" />
   </ItemGroup>
 </Project>
