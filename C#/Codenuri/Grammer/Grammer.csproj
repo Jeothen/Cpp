@@ -6,17 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="System_Object.cs" />
-    <Compile Remove="Value_Reference_Type.cs" />
-    <Compile Remove="Equality.cs" />
-    <Compile Remove="Nullable.cs" />
-    <Compile Remove="Elvis.cs" />
+    <Compile Remove="Array.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="System_Object.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <None Include="Value_Reference_Type.cs" />
-    <None Include="Equality.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <None Include="Nullable.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
-    <None Include="Elvis.cs" />
+    <None Include="Array.cs" />
   </ItemGroup>
 </Project>
