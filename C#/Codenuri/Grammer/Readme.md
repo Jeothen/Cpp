@@ -71,4 +71,12 @@
 
 #### Property
 
-* 
+* public filed problem
+  * Problems with the object's state may occur due to incorrect external access
+* Encapsulation
+  * Put the field private and access it using setter and getter methods
+  * In C#, there is a `property` syntax that automatically creates setter and getter methods.
+* Define property as get{} set{}, and then apply by get/set according to context
+* It is actually a method, but when used, it is used like a field
+
+* When the property name is Age, Compiler creates set_Age() get_Age() method for setter and getter

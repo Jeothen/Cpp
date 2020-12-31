@@ -1,16 +1,12 @@
 ﻿<Properties StartupConfiguration="{8649172A-A96E-420C-9FC3-503F50AD6F49}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Concepts/casting.cs">
-    <Files>
-      <File FileName="Concepts/casting.cs" Line="8" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Lecture" expanded="True">
-            <Node name="Concepts" expanded="True">
-              <Node name="casting.cs" selected="True" />
+            <Node name="Grammer" expanded="True">
+              <Node name="Property.cs" selected="True" />
             </Node>
-            <Node name="Grammer" expanded="True" />
           </Node>
         </State>
       </Pad>
