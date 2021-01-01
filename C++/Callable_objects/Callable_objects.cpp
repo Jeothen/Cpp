@@ -31,10 +31,25 @@ private:
     std::string _name;
 };
 
+bool foo() 
+{
+    printf("Call function\n");
+    return true;
+}
+
 int main()
 {
+    // function pointer
+    bool (*tmp)();
+    tmp = foo;
+    tmp();
+    // upper c++17
+    bool tmp2;
+    tmp2 = std::invoke(foo);
+
+
     int i = 123; // int
-    int& ri = i; // int
+    int& ri = i; // int  ri->i
     typedef std::add_pointer<decltype(i)>::type IntPtr; // int*
     typedef std::add_pointer<decltype(ri)>::type IntPtr2; // int*
 
@@ -52,9 +67,8 @@ int main()
 
     static_assert(!std::is_pointer<IntAgain>::value, "IntAgain should not be a pointer"); // int 
     static_assert(std::is_same<IntAgain, int>::value, "IntAgain should be equal to int");
- 
 
-    std::cout <<"Class with operator()" << std::endl;
+    std::cout << "Class with operator()" << std::endl;
 
     std::vector<Person> vc;
     vc.push_back({"Foob",21});
