@@ -48,3 +48,15 @@
 
 ### Virtual Inheritance
 
+* If inherited as a private/public class (struct) rather than a virtual class (struct), it may be ambiguous.
+
+  * For example, when there is an inheritance relationship of A->B / A->C and an inheritance relationship of B->D / C->D, 
+
+     In D, A's constructor is called twice.  
+
+  * And, When accessing A from D, it is unclear whether to access A instance created in B or C.
+
+* So, When inheriting multiple classes (struct), make diamond diagrams form through virtual
+
+  * In the case of A->B / A->C through virtual, B and C share and use one instance of A together.
+
