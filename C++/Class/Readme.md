@@ -27,6 +27,7 @@
   * public : Everyone
   * protected : class itself and derived clasees and friend classes.
   * private : class itself and friend classes
+* If static member variable is declared as global variable, Can be accessed from any instance of class(struct)
 
 
 

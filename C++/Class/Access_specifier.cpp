@@ -32,6 +32,25 @@ protected:
     int value() noexcept final override { return 40; } 
 };
 
+
+// Accessing member func / var
+struct Test
+{
+    int a;
+    static int sa;
+    void change_sa(int a){
+       sa = a;
+    }
+    
+    Test(){
+        a = 1;
+        sa = 1;
+    }
+};
+// Accessing static member
+// static member shares all objects of classs
+int Test::sa;
+
 auto main() -> int
 {
     MyStruct s;
@@ -44,4 +63,18 @@ auto main() -> int
 
     C_struct test;
     std::cout << test.calculateValue() << std::endl; // P_struct public function
+
+    // Accessing static member
+    Test tmp;
+    Test tmp2;
+    Test* ptr = &tmp; // pointer to ref.
+    Test::sa = 3;
+    std::cout << "tmp.sa = " << tmp.sa << std::endl;    
+    tmp.change_sa(5);
+    std::cout << "tmp.sa = " << tmp.sa << std::endl;
+    ptr->change_sa(6);
+    std::cout << "tmp.sa = " << tmp.sa << std::endl;
+    (*ptr).change_sa(7);
+    std::cout << "tmp.sa = " << tmp.sa << std::endl;
+    std::cout << "tmp2 .sa = " << tmp2.sa << std::endl;
 }
