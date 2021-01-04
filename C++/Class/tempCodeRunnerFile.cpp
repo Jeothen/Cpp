@@ -66,7 +66,7 @@ private :
 
 int main(){
     // outside class/struct
-
+/*
     B test; 
     test.p1 = 1; // public
     test.p2 = 2; // protected
@@ -81,21 +81,22 @@ int main(){
     test2.p1 = 1; // protected
     test2.p2 = 2; // protected
     test2.p3 = 3; // X
-
-
-
-    // private inheritance
-    PCh pchild;
-    pchild.move(); // public method
+*/
+    // private
+/*    PCh pchild;
+    pchild.move();  // compile error
     pchild.turn(); // not accessible error
     P pcasting = static_cast<P&>(pchild); // private inheritance not access base method
        
-    // public inheritance
+
+*/
     Ch child;
-    child.move();  // public method
-    child.turn(); // not accessible - private method
-    P& casting = static_cast<P&>(child); // public inheritance
-    casting.move();  // public method
-    casting.turn();  // private method
+//    child.move();   // compile error
+//    child.turn();  //
+    P casting = static_cast<P&>(child); // public inheritance
+    casting.move();
+
+    
+
 
 }

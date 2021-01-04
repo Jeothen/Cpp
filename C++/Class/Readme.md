@@ -44,6 +44,8 @@
   * private inheritance
     * public / protected member of base class - private member of derived class
     * Private member of base class - never access directly from a derived class / access through call public / protected
+* In private inheritance, private methods of base class cannot be accessed.
+* In public inheritance, private methods of base class can be accessed by type casting
 
 
 
