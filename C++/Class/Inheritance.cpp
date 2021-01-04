@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/*
+
 struct A
 {
 public: // everyone
@@ -41,7 +41,8 @@ struct D : protected A
         p3 = 6; // private in A / not accessible
     }
 };
-*/
+
+// private inheritance dose not access base class member
 
 class P {
 public:
@@ -63,6 +64,17 @@ public :
 private :
     using P::turn;
 };
+
+// final class
+class base {};
+
+class fc final : public base {};  // final class derived from other class
+
+class fsub : public fc { // error - class does not derived from final class 
+
+};
+
+
 
 int main(){
     // outside class/struct

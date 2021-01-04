@@ -31,6 +31,11 @@
 
 
 
+* Friend specifiers
+  * Using the friend specifier within a class allows access to global function or other classes(methods)
+
+
+
 ### Inheritance
 
 * Class / Struct has a Inheritance,  and there's private / public / protected inheritance
@@ -44,8 +49,17 @@
   * private inheritance
     * public / protected member of base class - private member of derived class
     * Private member of base class - never access directly from a derived class / access through call public / protected
+    
+    
+  
 * In private inheritance, private methods of base class cannot be accessed.
+
 * In public inheritance, private methods of base class can be accessed by type casting
+
+
+
+* final class
+  * A class containing the final specifier can be derived from another class, but cannot be the base class of other class.
 
 
 
@@ -63,3 +77,6 @@
 
   * In the case of A->B / A->C through virtual, B and C share and use one instance of A together.
 
+
+
+### 
