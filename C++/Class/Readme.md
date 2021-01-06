@@ -87,4 +87,5 @@
 
 * In the nested class/struct, inner can access to a outer class/struct, but converse is not established.
 * The friend class declared in outer class can access only the private member of outer, not the inner, and the friend class declared in inner class can access only the private member of inner class likewise.
+* Virtual methods can be inherited and overriden. And in the case of a non-static member, accessable the member function by creating an instance.
 
