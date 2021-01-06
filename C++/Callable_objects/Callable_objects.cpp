@@ -8,7 +8,6 @@ using name = std::add_pointer_t<returnType(arguments)>;     // <= C++14
 */
 
 #include <iostream>
-#include <type_traits>
 #include <vector>
 
 // classes with operator
