@@ -79,4 +79,12 @@
 
 
 
-### 
+### Nested Class/Struct
+
+* Define class/struct within class/struct
+* Also known as inner class/struct, methods are usually defined outside the outer class/struct.
+* Prior to C++11, only type name, enumerators, and static members of outer could be accessed, but from C++11, they can be accessed like a friend class. so all members could be accessed.
+
+* In the nested class/struct, inner can access to a outer class/struct, but converse is not established.
+* The friend class declared in outer class can access only the private member of outer, not the inner, and the friend class declared in inner class can access only the private member of inner class likewise.
+
