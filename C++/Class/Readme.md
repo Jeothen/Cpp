@@ -18,6 +18,37 @@
 
   * In C++, struct and class have no distinction except for the above difference.
 
+#### Static member
+
+* A variable or function shared by all instances in a class
+
+* Even const instances can perform static variable initialization, but static const / constexpr member initialization must be performed in struct/class.
+
+* Since there is no this pointer in a static member function, the instance is used as a parameter to access the static member variable. /  Since there is no this pointer, the address is stored as a pointer to a normal function, not member function.
+
+  * ```c++
+    class c {
+        int n;
+      public:
+        c() : n(0) {} // initialize
+    //    static void bad_mutate() { ++n *= 5; }  		// there's no this pointer
+        static void good_mutate(c &e) { ++e.n &= 5; }
+      	static void foo();
+    };
+    
+    // typedef void (c::*member_f_ptr)();  there's no this pointer.
+    typedef void (*f_ptr)();
+    f_ptr s = &c::foo;
+    ```
+
+* regardless of existance of instance, static member created at program start time.
+
+
+
+
+
+
+
 ---
 
 # Class
@@ -88,4 +119,6 @@
 * In the nested class/struct, inner can access to a outer class/struct, but converse is not established.
 * The friend class declared in outer class can access only the private member of outer, not the inner, and the friend class declared in inner class can access only the private member of inner class likewise.
 * Virtual methods can be inherited and overriden. And in the case of a non-static member, accessable the member function by creating an instance.
+
+
 
