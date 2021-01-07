@@ -45,7 +45,22 @@
 
 
 
+#### Non-static member
 
+* Member variable/function that only works in each instance
+
+* Member functions can be called in normal / rvalue instances.
+
+  * ```c++
+    struct S {
+        void normal() &  {} // normal instances.
+        void rval() && {} // rvalue (temporary) instances.
+    };
+    
+    S ins;
+    ins.func();     // called normal instance
+    S{}.func(); 		// Called rvalue instance
+    ```
 
 
 
