@@ -1,34 +1,48 @@
 #include <iostream>
 
-class ConstCorrectClass
+class C
 {
-    int x;
+    int x = 1;
+    int arr[5];
 public:
-    int getX() const { return x; } // Function is const: Doesn't modify instance.
+    int getX() const { return x; } // Function is const: Doesn't modify instance(x)
+    int getX1() const;
+    const int CgetX() const;
     void setX(int i) { x = i; }    // can modifies instance.
+
+    // operator overload
+    int &operator[](size_t index) { return arr[index]; }
+    const int &operator[](size_t index) const { return arr[index]; }  // const instance
 };
 
-int const_correct_reader(const ConstCorrectClass& c)
+int C::getX1() const { return x; }
+const int C::CgetX() const { return x; } // CgetX() type have to be const
+
+struct Example {
+    void foo() { std::cout << "Foo" << std::endl; }
+    void foo() const { std::cout << "const Foo" << std::endl; }
+};
+
+// call basic method
+void non_const_param(Example& a, Example* b)
 {
-    return c.getX();
+    a.foo(); b->foo();
 }
 
-// Parameter isn't const: Modifies parameter.
-void const_correct_writer(ConstCorrectClass &c)
+// call const method
+void const_param(const Example& a, const Example *b)
 {
-    c.setX(42);
+    a.foo(); b->foo();
 }
-
-const ConstCorrectClass invariant; // Instance is const: Can't be modified.
-ConstCorrectClass variant;         // Instance isn't const: Can be modified.
-
-// ...
-
 
 int main() {
-    const_correct_reader(invariant); // Good.   Calling non-modifying function on const instance.
-    const_correct_reader(variant);   // Good.   Calling non-modifying function on modifiable instance.
+    C test;
+    std::cout << test.getX() << std::endl;
+    test.setX(2);
+    std::cout << test.getX1() << std::endl;
+    std::cout << test.CgetX() << std::endl;
 
-    const_correct_writer(variant);   // Good.   Calling modifying function on modifiable instance.
-    const_correct_writer(invariant); // Error.  Calling modifying function on const instance.
+    Example a; Example b;
+    non_const_param(a, &b);
+    const_param(a, &b);
 }
