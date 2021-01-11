@@ -2,9 +2,11 @@
 
 * It is useful when the instance has no transformation or there are parameters that should not be changed by mistake.
 * If there is a `const` before parentheses in the method implementation part, the value of instance cannot be modified within the method.
-  * In the case of a const type instance, const must be declared in front of the parentheses when calling a method.
-
-* 
+  
+* In the case of a const type instance, const must be declared in front of the parentheses when calling a method.
+  
+  
+  
 
 
 
@@ -22,3 +24,21 @@
 * Member variable using mutable keyword can be changed even if intance is const type
 *  If constructor not complemented, so const type value is not initialized, error occured when compile time
 
+
+
+### Const Ketword
+
+* Non-const pointer/reference can not bind to const variable.
+
+
+
+* int can not assign to const reference
+* int reference can not assign to const pointer
+
+
+
+* The const class cannot use non-const functions.
+
+* The const qualifier overloads a general function, so when overloading within a class, const_casting must be performed.
+
+  
