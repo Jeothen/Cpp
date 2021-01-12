@@ -84,7 +84,7 @@ int main(){
     *e1 = n1;
     e1 = &n1; // int ref. can not assign to const pointer
 
-    *e2 = n1; // 
+    *e2 = n1; // int can not assign to const reference
     e2 = &n1  // int ref. can not assign to const pointer
 }
 

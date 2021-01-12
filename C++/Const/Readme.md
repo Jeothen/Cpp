@@ -41,4 +41,19 @@
 
 * The const qualifier overloads a general function, so when overloading within a class, const_casting must be performed.
 
-  
+
+
+
+### Const Member function
+
+* const member function can not be assignment on a class data member.
+* it can be modified class data member value in directly, like using a pointer. just can not assignment on a data member
+
+
+
+### Constexpr
+
+* Constexpr is 
+
+
+
