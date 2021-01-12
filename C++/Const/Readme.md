@@ -53,7 +53,11 @@
 
 ### Constexpr
 
-* Constexpr is 
+* Const keyword executed at compile time
+* An error occurs when the data executed at runtime is in the constexpr function/data
 
 
 
+* If constexpr vs # ifdef
+  * `#ifdef`  is evaluated at preprocessing time. and it cannot be used to conditionally compile code based on the value of a template parameter.  and  gramatical error codes can be discard.
+  * ` if constexpr` is used for conditionally compile code based on the value of template parameter.  condition should be const expression.
