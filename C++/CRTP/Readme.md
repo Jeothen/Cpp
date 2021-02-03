@@ -19,17 +19,19 @@
   
 
 * Object counter
+  
   * Enable to  search the number of objects created and destroyed for a specified class using the object counter.
 
 
 
-* Polymorphic chaining
+* Polymorphic chainin
 
-  * d
+  * The CRTP can be used to avoid Polymorphic chaining
+  * When inheriting, inherit the derived type and maintain the derived object
 
-    
+  
 
 * Polymorphic copy construction
 
-
-
+  * When creating a copy of an object with a base class pointer, define a virtual copy function in the derived class.
+  * With CRTP, all derived classes do not have to duplicate base class functions, thus avoiding duplication.

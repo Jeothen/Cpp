@@ -105,6 +105,7 @@ private:
 };
 
 // Derived class
+// The CRTP can be used to avoid such problem and to implement "Polymorphic chaining":
 class CoutPrinter : public Printer<CoutPrinter>
 {
 public:
@@ -123,7 +124,7 @@ class AbstractShape
 {
 public:
     virtual ~AbstractShape() = default;
-    virtual std::unique_ptr<AbstractShape> clone() const = 0;
+    virtual std::unique_ptr<AbstractShape> clone() const = 0; // virtual function
 };
 
 // This CRTP class implements clone() for Derived
@@ -131,16 +132,12 @@ template <typename Derived>
 class Shape : public AbstractShape
 {
 public:
-    std::unique_ptr<AbstractShape> clone() const override // base class pointer
+    // define in the all derived class
+    std::unique_ptr<AbstractShape> clone() const override // copy constructor by base class pointer
     {
-        return std::make_unique<Derived>(static_cast<Derived const &>(*this));  // override
+        std::cout << "Copy Constructor !" << std::endl;
+        return std::make_unique<Derived>(static_cast<Derived const &>(*this));  
     }
-
-protected:
-    // We make clear Shape class needs to be inherited
-    Shape() = default;
-    Shape(const Shape &) = default;
-    Shape(Shape &&) = default;
 };
 
 // Every derived class inherits from CRTP class instead of abstract class
@@ -160,6 +157,10 @@ int main(){
     test->number_alive(); // 1
 
     //polymorphic chaining
+    //  returns a 'Printer' instance.
     CoutPrinter().print("Hello ").SetConsoleColor().println("Printer!");
 
+    
+    Square a;
+    a.clone(); // create copy constructor
 }  
