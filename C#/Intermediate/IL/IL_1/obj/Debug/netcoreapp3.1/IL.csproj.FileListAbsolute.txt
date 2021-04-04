@@ -1,0 +1,12 @@
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/bin/Debug/netcoreapp3.1/IL.deps.json
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/bin/Debug/netcoreapp3.1/IL.runtimeconfig.json
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/bin/Debug/netcoreapp3.1/IL.runtimeconfig.dev.json
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/bin/Debug/netcoreapp3.1/IL.dll
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/bin/Debug/netcoreapp3.1/IL.pdb
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.csprojAssemblyReference.cache
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.AssemblyInfoInputs.cache
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.AssemblyInfo.cs
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.csproj.CoreCompileInputs.cache
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.dll
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.pdb
+/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/Debug/netcoreapp3.1/IL.genruntimeconfig.cache

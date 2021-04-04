@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{184055E0-E312-4162-A5BB-9D5FC363E33F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IL_1/IL_Basic.cs">
+    <Files>
+      <File FileName="IL_1/ex01.il" Line="1" Column="1" />
+      <File FileName="IL_1/ex02.il" Line="1" Column="1" />
+      <File FileName="IL_1/ex03.il" Line="1" Column="1" />
+      <File FileName="IL_1/IL_Basic.cs" Line="14" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IL" expanded="True">
+            <Node name="IL_1" expanded="True">
+              <Node name="IL_Basic.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.IL__1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
