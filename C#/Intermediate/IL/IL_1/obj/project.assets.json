@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/IL_1.csproj",
+      "projectUniqueName": "/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL_1/IL_1.csproj",
       "projectName": "IL_1",
-      "projectPath": "/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/IL_1.csproj",
+      "projectPath": "/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL_1/IL_1.csproj",
       "packagesPath": "/Users/thjeong/.nuget/packages/",
-      "outputPath": "/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL/obj/",
+      "outputPath": "/Users/thjeong/Desktop/Language/C#/Intermediate/IL/IL_1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/thjeong/.config/NuGet/NuGet.Config"
